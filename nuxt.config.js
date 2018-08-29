@@ -13,6 +13,11 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+
+  css: [
+    '@/assets/sass/main.scss'
+  ],
+
   /*
   ** Customize the progress bar color
   */
@@ -33,7 +38,16 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
-  }
-}
+    },
 
+    postcss: [
+      require('autoprefixer')({
+        browsers: ['> 5%', 'ie >= 11']
+      })
+    ]
+  },
+
+  modules: [
+    ['bootstrap-vue/nuxt', { css: false }],
+  ]
+}
