@@ -14,6 +14,9 @@ module.exports = {
     ]
   },
 
+  /*
+  ** Import Sass manifest files
+  */
   css: [
     '@/assets/sass/main.scss'
   ],
@@ -44,10 +47,15 @@ module.exports = {
       require('autoprefixer')({
         browsers: ['> 5%', 'ie >= 11']
       })
-    ]
+    ],
+
+    vendor: ['axios']
   },
 
   modules: [
+    '@nuxtjs/dotenv',
     ['bootstrap-vue/nuxt', { css: false }],
-  ]
+  ],
+
+  serverMiddleware: [ ]
 }
